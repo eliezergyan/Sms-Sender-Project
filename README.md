@@ -1,12 +1,18 @@
-# Sms-Sender-Project
+# Project Name
+Sms-Sender-Project
+
+# Project Description
 An SMS platform that can be used to send SMS messages to multiple users.
+
+# Table of Contents
+Project Objective
+Customer Requirement
 
 # Project Objective
 Ronald Rolling is a digital marketer who wants an SMS platform that he can use to send 
 SMS messages to multiple users. He wants to see the history of SMS that has been sent 
 and has come up with a list of requirements. He has found you to be an experienced 
 developer through your LinkedIn profile.
-
 
 # Customer Requirements
 Your users should be able to:
