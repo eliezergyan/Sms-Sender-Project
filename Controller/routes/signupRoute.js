@@ -9,7 +9,7 @@ signupRoute.post('/', async(req, res) => {
         if(password === confirmPassword){
             const newUser = await pool.query("INSERT INTO users (user_first_name, user_last_name, username, user_email, user_password) VALUES ($1, $2, $3, $4, $5) RETURNING *",
             [firstName, lastName, username, email, password])
-            res.send("login page");
+            res.json({"message": "success"});
         } else {
             res.send("Check details and try again");
         }
