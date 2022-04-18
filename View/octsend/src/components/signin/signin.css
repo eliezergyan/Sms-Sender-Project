@@ -1,0 +1,156 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* body{
+
+  } */
+
+ .grid-container{
+     /* border: 1px solid red; */
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     grid-template-rows: 1fr;
+     grid-template-areas: 
+     "left right"
+     ;
+ }
+ 
+ .left-svg{
+     grid-area: left;
+     border: 1px solid #009D96;
+     background-color: #009D96;
+     height: 656px;
+ }
+ .left-svg .left-logo svg{
+    margin-left: 70px;
+    margin-top: 10px;
+ }
+/* .svg-container svg{
+    margin-top: 30px;
+ } */
+
+ .signin-form{
+     grid-area: right;
+     border: 1px solid #F9A826;
+     background-color: #F9A826;
+     height: 656px;
+ }
+
+ .signin-form form{
+     background-color: #009D96 ;
+     /* opacity: 0.80; */
+     height: 381px ;
+     width: 420px;     
+     border-radius: 7px;
+     margin-top: 170px;
+     margin-left: 148px;
+ }
+input{
+    width: 280px;
+    height: 28px; 
+    
+}
+
+input::placeholder{
+    color: #009D96 ;
+    font-family: 'Inter', sans-serif;
+    margin-left: 55px;
+}
+
+/* input:focus{
+    border: 1px thin #F9A826;
+} */
+ .signin input[type="text"]{
+     background-color: #fff;
+     border: none;
+     margin-bottom: 27px;
+     margin-left: 15px;
+     margin-top: 96px;
+     box-shadow: 1px 5px 5px #3f3f3f;
+     padding-left: 20px;
+     outline-color: #F9A826;
+ }
+
+    #username{
+        margin-top: 70px;
+ }
+ input[type="password"]{
+     background-color: #fff;
+     margin-bottom: 27px;
+     margin-left: 15px;
+     border: none;
+     outline-color: #F9A826;
+     box-shadow: 1px 5px 5px #3f3f3f;
+     padding-left: 20px;
+ }
+
+ input[type="submit"]{
+     background-color: #F9A826;
+     border: none;
+     margin-left: 15px;
+     margin-bottom: 27px;
+     color: #009D96;
+     font-family: 'Inter', sans-serif;
+     font-weight: 600;
+     text-transform: uppercase;
+
+ }
+
+ input[type="submit"]:hover{
+     background-color: #fff;
+     color: #F9A826;
+ }
+ 
+ input[type="checkbox"]{
+     width: 15px;
+     height: 15px;
+     margin-left: 15px;
+ }
+
+ label{
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+    font-size: 12px;
+ }
+/* p{
+    display: inline;
+} */
+ #remember{
+     margin-top: 10px;
+     margin-left: 10px;
+     
+ }
+
+ #forgotten {
+     margin-left: 60px;
+ }
+
+ #forgotten a{
+     color: #F9A826;
+     text-decoration: none;
+     cursor: pointer;
+ }
+
+ #forgotten a:hover {
+     color: #fff;
+ }
+ #not-a-member{
+     margin-left: 20px;
+     /* margin-top: 59px; */
+ }
+
+ #not-a-member a{
+     padding-left: 5px;
+ }
+
+ #not-a-member a:hover{
+     color: #fff;
+ }
+
+ #sign-up-color{
+     color: #F9A826;
+     font-weight: 700;
+ }
+
