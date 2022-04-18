@@ -13,7 +13,7 @@ loginRouter.post('/', async (req, res) => {
         const { user, email, pass } = req.body;
         const users = await pool.query("SELECT user_password FROM users WHERE username=$1 OR user_email=$2", [user, email]);
         if(users.rows[0].user_password === pass){
-            res.send("Login Successful")
+            res.send("message page")
         }
         else {
             res.send("Incorrect password");
