@@ -1,9 +1,60 @@
 import './signup.css'
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 const Signup = () =>{
 
     let navigate = useNavigate(); 
+
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmpassword, setConfirmPassword] = useState("");
+
+    const handleFirstName = (e) => {
+        setFirstName(e.target.value);
+    }
+
+    const handleLastName = (e) => {
+        setLastName(e.target.value);
+    }
+
+    const handleUsername = (e) => {
+        setUsername(e.target.value);
+    }
+
+    const handleEmail = (e) => {
+        setEmail(e.target.value);
+    }
+
+    const handlePassword = (e) => {
+        setPassword(e.target.value);
+    }
+
+    const handleConfirmPassword = (e) => {
+        setConfirmPassword(e.target.value);
+    }
+
+    const onSubmitForm = async (e) => {
+        e.preventDefault();
+
+        try {
+            const body = { firstName, lastName, username, password, email, confirmpassword};
+            const response = await fetch("http://localhost:5000/signup", {
+                method: "POST",
+                headers: {"content-type": "application/json"},
+                body: JSON.stringify(body)
+            });
+            if(response.status === 200){
+                 navigate("/signin");
+            }
+            console.log(response);
+        } catch (err) {
+            console.error(err.message);
+        }
+    }
 
     return(
         <div class="grid-container">        
@@ -58,13 +109,13 @@ const Signup = () =>{
             </div>           
         </div>
         <div class="signup-form">
-            <form>
-                <input type="text" placeholder="First Name" id="firstname-input"/>                
-                <input type="text" placeholder="Last Name" />               
-                <input type="text" placeholder="Username" />            
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />                
-                <input type="password" placeholder="Confirm Password" />                
+            <form onSubmit={onSubmitForm}>
+                <input type="text" onChange={handleFirstName} value={firstName} placeholder="First Name" id="firstname-input" required />                
+                <input type="text" onChange={handleLastName} value={lastName} placeholder="Last Name" required/>               
+                <input type="text" onChange={handleUsername} value={username} placeholder="Username" required />            
+                <input type="email" onChange={handleEmail} value={email} placeholder="Email" required />
+                <input type="password" onChange={handlePassword} value={password} placeholder="Password" required />                
+                <input type="password" onChange={handleConfirmPassword} value={confirmpassword} placeholder="Confirm Password"  required/>                
                 <input type="submit" value="Sign Up" />
                 <br />                
                 <label id="a-member">I have an account. <a id="sign-in-color" onClick={ ()=> {navigate("/signin")}} >Sign In!</a></label>
