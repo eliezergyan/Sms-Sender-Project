@@ -1,11 +1,28 @@
 import './compose.css';
 import Oct from '../../assets/octLogo.png';
+import { useState } from 'react';
+import ComposeForm from './compose2';
 
 
 
-const Compose = () =>{
+const Compose = () =>{    
+
+    let hone = {
+        first: "Compose",
+        second: "History",
+        third: "Saved Templates"
+        
+    }
+
+    const [hOne, setHOne] = useState(hone.first);
+    const [form, setForms] = useState(<ComposeForm />)
 
     let oct= Oct;
+
+    const changeHOne = (hOne, form) =>{
+        setHOne(hOne);
+        setForms(form)
+    }
 
     return (
         <div className="grids-container">
@@ -14,29 +31,16 @@ const Compose = () =>{
             </div>
             <div className="left-section-compose">
                 <div className="header-2">
-                    <h2>Compose</h2>
-                    <h2>History</h2>
-                    <h2>Saved Templates</h2>
+                    <h2 onClick={()=>changeHOne(hone.first, <ComposeForm /> )}>Compose</h2>
+                    <h2 onClick={()=>changeHOne(hone.second)}>History</h2>
+                    <h2 onClick={()=>changeHOne(hone.third)}>Saved Templates</h2>
                     <h2>Log Out</h2> 
                 </div>            
             </div>
             <div className="main-section">            
-                    <h1>Compose</h1>
-                    <div className="main-message-section">
-                        <div className="main-message">                                                           
-                            <div className="form-section">
-                                <form>
-                                    <input type="number" placeholder="Enter a Number" id="compose-number" />
-                                    <br />
-                                    <input type="text" placeholder="Subject" id="compose-subject"/>
-                                    <br />
-                                    <textarea type="text" placeholder="Message..." class="message-mobile" id="message " required></textarea>
-                                    <button>Save as Template</button>
-                                    <button>Send Now</button>
-                                    <button>Send Later</button>
-                                </form>   
-                            </div>                            
-                        </div>            
+                <h1>{hOne}</h1>
+                <div className="main-message-section">
+                       {form}             
                 </div>    
             </div>
         </div>  
