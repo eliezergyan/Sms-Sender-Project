@@ -50,7 +50,6 @@ const Signup = () =>{
             if(response.status === 200){
                  navigate("/signin");
             }
-            console.log(response);
         } catch (err) {
             console.error(err.message);
         }

@@ -1,9 +1,24 @@
 import './signin.css';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 const SignIn = () =>{
 
     let navigate = useNavigate();
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleUsername = (e) => {
+        setUsername(e.target.value);
+    }
+
+    const handlePassword = (e) => {
+        setPassword(e.target.value);
+    }
+
+    const onSubmitForm = async () => {
+        await console.log(username, password);
+    }
 
     return(
     <div className="grid-container">        
@@ -97,10 +112,10 @@ const SignIn = () =>{
                       
     </div>
     <div className="signin-form">
-        <form>
-            <input type="text" placeholder="Username" id='username'/>
+        <form onSubmit={onSubmitForm}>
+            <input type="text" value={username} onChange={handleUsername} placeholder="Username" id='username' required/>
             
-            <input type="password" placeholder="Password" />
+            <input type="password" value={password} onChange={handlePassword} placeholder="Password" required/>
             
             <input type="submit" value="Login" />
             <br/>

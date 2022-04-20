@@ -34,3 +34,9 @@ CREATE TABLE message_receiver(
     FOREIGN KEY (receiver_id) REFERENCES receiver(receiver_id),
     FOREIGN KEY (message_id) REFERENCES message(message_id)
 );
+
+CREATE TABLE templates(
+	template_id SERIAL PRIMARY KEY,
+  template_subject VARCHAR(255),
+  template_body VARCHAR(255)
+)
