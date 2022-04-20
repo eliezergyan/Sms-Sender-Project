@@ -14,9 +14,9 @@ messageRoute.get('/', async (req, res) => {
 
 messageRoute.post('/', async (req, res) => {
     try {
-        const { msgSubject, msgBody, msgReceiver} = req.body;
+        const { messageSubject, messageBody, messageReceiver} = req.body;
         const newMessage = await pool.query("INSERT INTO message(message_subject, message_body, date_time_sent, receiver_contact) VALUES ($1, $2, current_timestamp, $3) RETURNING * ", 
-        [msgSubject, msgBody, msgReceiver]);
+        [messageSubject, messageBody, messageReceiver]);
         res.json({"message": "message_sent"});
         
     } catch (err) {
