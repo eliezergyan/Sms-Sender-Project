@@ -16,8 +16,24 @@ const SignIn = () =>{
         setPassword(e.target.value);
     }
 
-    const onSubmitForm = async () => {
-        await console.log(username, password);
+    const onSubmitForm = async (e) => {
+        e.preventDefault();
+
+        try {
+            const body = { username, password};
+            const response = await fetch("http://localhost:5000/login", {
+                method: "POST",
+                headers: {"content-type": "application/json"},
+                body: JSON.stringify(body)
+            });
+            console.log(response.status);
+            if(response.status === 200){
+                navigate("/compose");
+            }
+            
+        } catch (err) {
+            console.error(err);
+        }
     }
 
     return(

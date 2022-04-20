@@ -49,8 +49,9 @@ const Signup = () =>{
             });
             if(response.status === 200){
                  navigate("/signin");
-            }
+            };
         } catch (err) {
+            navigate("signup");
             console.error(err.message);
         }
     }
