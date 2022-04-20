@@ -7,7 +7,7 @@
 
   } */
 
- .grid-container{
+ .grid-container-signin{
      /* border: 1px solid red; */
      display: grid;
      grid-template-columns: 1fr 1fr;
@@ -17,15 +17,16 @@
      ;
  }
  
- .left-svg{
+ .left-svg-signin{
      grid-area: left;
      border: 1px solid #009D96;
      background-color: #009D96;
      height: 656px;
  }
- .left-svg .left-logo svg{
+ .left-svg-signin .left-logo-signin svg{
     margin-left: 70px;
     margin-top: 10px;
+    cursor: pointer;
  }
 /* .svg-container svg{
     margin-top: 30px;
@@ -47,13 +48,14 @@
      margin-top: 170px;
      margin-left: 148px;
  }
-input{
+ .signin-form input{
     width: 280px;
-    height: 28px; 
+    height: 28px;
+     
     
 }
 
-input::placeholder{
+.signin-form input::placeholder{
     color: #009D96 ;
     font-family: 'Inter', sans-serif;
     margin-left: 55px;
@@ -62,7 +64,7 @@ input::placeholder{
 /* input:focus{
     border: 1px thin #F9A826;
 } */
- .signin input[type="text"]{
+ .signin-form input[type="text"]{
      background-color: #fff;
      border: none;
      margin-bottom: 27px;
@@ -76,7 +78,7 @@ input::placeholder{
     #username{
         margin-top: 70px;
  }
- input[type="password"]{
+ .signin-form input[type="password"]{
      background-color: #fff;
      margin-bottom: 27px;
      margin-left: 15px;
@@ -86,7 +88,7 @@ input::placeholder{
      padding-left: 20px;
  }
 
- input[type="submit"]{
+ .signin-form input[type="submit"]{
      background-color: #F9A826;
      border: none;
      margin-left: 15px;
@@ -98,18 +100,18 @@ input::placeholder{
 
  }
 
- input[type="submit"]:hover{
+ .signin-form input[type="submit"]:hover{
      background-color: #fff;
      color: #F9A826;
  }
  
- input[type="checkbox"]{
+ .signin-form input[type="checkbox"]{
      width: 15px;
      height: 15px;
      margin-left: 15px;
  }
 
- label{
+ .signin-form label{
     font-family: 'Inter', sans-serif;
     color: #fff;
     font-size: 12px;
