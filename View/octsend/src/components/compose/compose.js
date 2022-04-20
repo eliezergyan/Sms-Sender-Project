@@ -16,7 +16,8 @@ const Compose = () =>{
                 <div className="header-2">
                     <h2>Compose</h2>
                     <h2>History</h2>
-                    <h2>Saved Templates</h2> 
+                    <h2>Saved Templates</h2>
+                    <h2>Log Out</h2> 
                 </div>            
             </div>
             <div className="main-section">            
@@ -30,7 +31,7 @@ const Compose = () =>{
                                     <input type="text" placeholder="Subject" id="compose-subject"/>
                                     <br />
                                     <textarea type="text" placeholder="Message..." class="message-mobile" id="message " required></textarea>
-                                    <button>Save Templates</button>
+                                    <button>Save as Template</button>
                                     <button>Send Now</button>
                                     <button>Send Later</button>
                                 </form>   
