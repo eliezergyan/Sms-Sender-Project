@@ -7,7 +7,7 @@
 
  } */
 
- .grid-container{
+ .grid-container-signup{
      /* border: 1px solid red; */
      display: grid;
      grid-template-columns: 1fr 1fr;
@@ -17,14 +17,14 @@
      ;
  }
  
- .left-svg{
+ .left-svg-signup{
      grid-area: left;
      border: 1px solid #009D96;
      background-color: #009D96;
      height: 656px;
  }
 
- .left-svg .left-logo svg{
+ .left-svg-signup .left-logo-signup svg{
     margin-left: 70px;
     margin-top: 10px;
     cursor: pointer;
@@ -45,24 +45,24 @@
     margin-top: 70px;
     margin-left: 148px;
 }
-input{
+.signup-form input{
    width: 280px;
    height: 28px; 
    
 }
 
-input::placeholder{
+.signup-form input::placeholder{
    color: #009D96 ;
    font-family: 'Inter', sans-serif;
    /* margin-left: 55px; */
 }
 
-input:focus{
+.signup-form input:focus{
    /* border-color: #F9A826; */
    outline-color: #F9A826;
    color: #009D96;
 }
- input[type="text"]{
+.signup-form input[type="text"]{
     background-color: #fff;
     border: none;
     margin-bottom: 27px;
@@ -75,7 +75,7 @@ input:focus{
     margin-top: 70px;
 }
 
-input[type="email"]{
+.signup-form input[type="email"]{
     background-color: #fff;
     margin-bottom: 27px;
     margin-left: 15px;
@@ -84,7 +84,7 @@ input[type="email"]{
     padding-left: 20px;
 }
 
-input[type="password"]{
+.signup-form input[type="password"]{
     background-color: #fff;
     margin-bottom: 27px;
     margin-left: 15px;
@@ -93,7 +93,7 @@ input[type="password"]{
     padding-left: 20px;
 }
 
-input[type="submit"]{
+.signup-form input[type="submit"]{
     background-color: #F9A826;
     border: none;
     margin-left: 15px;
@@ -105,19 +105,19 @@ input[type="submit"]{
 
 }
 
-input[type="submit"]:hover{
+.signup-form input[type="submit"]:hover{
     background-color: #fff;
     color: #F9A826;
     
 }
 
-input[type="checkbox"]{
+.signup-form input[type="checkbox"]{
     width: 15px;
     height: 15px;
     margin-left: 15px;
 }
 
-label{
+.signup-form label{
    font-family: 'Inter', sans-serif;
    color: #fff;
    font-size: 12px;
@@ -136,6 +136,6 @@ label{
     cursor: pointer;
 }
 
-#a-member a:hover {
+#a-member a:hover { 
     color: #fff;
 }

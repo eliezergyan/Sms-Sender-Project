@@ -8,7 +8,7 @@ body{
     background-color: #009D96;
 }
 
-.grid-container{
+.grid-container-home{
     /* border: 1px solid white; */
     display: grid;
     grid-template-columns: 0.9fr 1fr;
@@ -19,22 +19,22 @@ body{
     ;
 }
 
-.left-logo{
+.left-logo-home{
     grid-area: left;
     /* border: 1px solid red; */
     font-family: 'Inter', sans-serif;
 }
 
-.main-logo {
+.main-logo-home {
     margin-top: 100px;
     margin-left: 45px;
 }
 
-.main-logo img{
+.main-logo-home img{
     width: 607px;
 }
 
-.logo-paragraph{
+.logo-paragraph-home{
     width: 350px;
     height: 166px;
     /* border: 1px solid yellow; */
@@ -42,7 +42,7 @@ body{
     margin-left: 100px;
 }
 
-.logo-paragraph p{
+.logo-paragraph-home p{
     font-family: 'Inter', sans-serif;
     font-weight: 900;
     font-size: 24px;
@@ -51,14 +51,14 @@ body{
     text-align: left;
 }
 
-.right-hero{
+.right-hero-home{
     grid-area: right;
     /* border: 1px solid yellow; */
     margin-top: 0;
     width: 360px;
 }
 
-.right-hero nav{
+.right-hero-home nav{
     grid-area: nav;
     /* border: 1px solid white; */
     font-family: 'Inter', sans-serif;
