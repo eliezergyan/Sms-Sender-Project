@@ -7,6 +7,7 @@ import SignIn from './components/signin/signIn';
 import SignUp from './components/signup/signup';
 import ResetPassword from './components/reset password/reset-password';
 import Home from './components/home';
+import Compose from './components/compose/compose';
 
 // const styl = styles;
 function App() {
@@ -18,7 +19,8 @@ function App() {
                 <Route path="/" element={<Home />} />                
                 <Route path="/signup" element={<SignUp />} />                
                 <Route path="/signin" element={<SignIn />} />
-                <Route path="/reset-password" element = {<ResetPassword />} />                           
+                <Route path="/reset-password" element = {<ResetPassword />} />
+                <Route path="/compose" element = {<Compose />} />                          
             </Routes>
         </Router>      
     </div>
