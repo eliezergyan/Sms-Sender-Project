@@ -138,7 +138,13 @@
     font-family: 'Inter', sans-serif;
     color: #fff;
     border-radius: 5px;
+    border: 0;
     
+}
+
+.form-section button:hover{
+    background-color: #009d95bb;
+    cursor: pointer;
 }
 
 
@@ -203,3 +209,59 @@ textarea{
     font-size: 15px;
   }
   
+  .container-history{
+    width: 860px;
+    height: 410px;
+    background-color: #fff;
+    margin: 20px;
+    border: 1px solid #fff;
+  }
+  .hisory-message-section{
+      display: flex;
+      width: 800px;
+      justify-content: space-between;
+  }
+
+  .hisory-message-section .btn{
+    display: flex;
+    justify-content: space-between;
+    width: 185px;
+    margin-top: 67px;
+    
+  }
+
+  .btn button{
+      width: 100px;
+      height: 30px;
+      margin-left: 15px;
+      background-color: #009D96;
+      color: #fff;
+      border: 0;
+      cursor: pointer;
+  }
+
+  .btn button:hover{
+      background-color: #009d95bb;
+  }
+  .hisory-message{
+      /* border: 1px solid red; */
+      width: 600px;
+      height: 70px;
+      margin-top: 27px;
+      margin-left: 15px;
+      background-color: #e4e4e4;
+      
+  }
+
+  .hisory-message h3{
+      width: 50px;
+      margin-left: 20px;
+  }
+
+  .hisory-message #subject{
+    width: 200px;
+  }
+
+  .hisory-message #message{
+    width: 300px;
+  }

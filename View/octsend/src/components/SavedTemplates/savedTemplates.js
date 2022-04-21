@@ -1,6 +1,6 @@
 import '../compose/compose.css';
 
-const History = () =>{
+const SavedTemplates = () =>{
     return(
         <div className="container-history">
             <div className="hisory-message-section">
@@ -62,4 +62,4 @@ const History = () =>{
     )
 }
 
-export default History;
+export default SavedTemplates;

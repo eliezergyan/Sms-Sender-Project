@@ -2,10 +2,17 @@ import './compose.css';
 import Oct from '../../assets/octLogo.png';
 import { useState } from 'react';
 import ComposeForm from './compose2';
+import History from '../history/history';
+import SavedTemplates from '../SavedTemplates/savedTemplates';
+import { useNavigate } from 'react-router-dom';
 
 
 
 const Compose = () =>{    
+
+    const myStle = {
+        color: "#F9A826"
+    }
 
     let hone = {
         first: "Compose",
@@ -16,6 +23,7 @@ const Compose = () =>{
 
     const [hOne, setHOne] = useState(hone.first);
     const [form, setForms] = useState(<ComposeForm />)
+    const [color, setColor] = useState()
 
     let oct= Oct;
 
@@ -23,6 +31,8 @@ const Compose = () =>{
         setHOne(hOne);
         setForms(form)
     }
+
+    let navigate = useNavigate();
 
     return (
         <div className="grids-container">
@@ -32,9 +42,9 @@ const Compose = () =>{
             <div className="left-section-compose">
                 <div className="header-2">
                     <h2 onClick={()=>changeHOne(hone.first, <ComposeForm /> )}>Compose</h2>
-                    <h2 onClick={()=>changeHOne(hone.second)}>History</h2>
-                    <h2 onClick={()=>changeHOne(hone.third)}>Saved Templates</h2>
-                    <h2>Log Out</h2> 
+                    <h2 onClick={()=>changeHOne(hone.second, <History />)}>History</h2>
+                    <h2 onClick={()=>changeHOne(hone.third, <SavedTemplates />)}>Saved Templates</h2>
+                    <h2 onClick={()=> {navigate("/signin")}}>Log Out</h2> 
                 </div>            
             </div>
             <div className="main-section">            
