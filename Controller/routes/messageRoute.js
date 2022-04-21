@@ -1,6 +1,5 @@
 const express = require("express");
 const pool = require('../../Model/db_connect');
-require("dotenv").config();
 const credentials  = {
     apiKey: "8b0225c779bfa167afdabffc7ed58cc7824086720d2770ab735b84ff5a2c41f9",
     username: "octosenda" 
