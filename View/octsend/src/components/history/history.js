@@ -34,7 +34,7 @@ const History = () =>{
                 </div>
                 <div className="btn">
                     <button>Edit</button>
-                    <button>Send Now</button>
+                    <button>Resend</button>
                 </div>                
             </div>
 

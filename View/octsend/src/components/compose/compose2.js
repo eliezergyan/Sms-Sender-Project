@@ -21,6 +21,14 @@ const ComposeForm = () =>{
     const handleMessageReceiver = (e) => {
         setContacts(e.target.value)
     }
+
+    const clearInputs = (e) => {
+        e.preventDefault();
+        
+        setContacts("");
+        setMessageSubject("");
+        setMessageBody("");
+    }
     
     const handleTemplate = async (e) => {
         e.preventDefault();
@@ -49,8 +57,6 @@ const ComposeForm = () =>{
                 headers: {"content-type": "application/json"},
                 body: JSON.stringify(body)
             });
-
-            console.log(response)
             
             splitContacts.forEach(async (messageReceiver) => {
                 const body =  { messageSubject, messageBody, messageReceiver };
@@ -83,7 +89,7 @@ const ComposeForm = () =>{
                         <textarea type="text" onChange={handleMessageBody} value={messageBody} placeholder="Message..." className="message-mobile" id="message " required></textarea>
                         <button onClick={handleTemplate}>Save Templates</button>
                         <button onClick={handleSend}>Send Now</button>
-                        <button >Send Later</button>
+                        <button onClick={clearInputs}>Clear</button>
                     </form>   
                 </div>                            
             </div>
