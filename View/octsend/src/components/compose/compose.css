@@ -261,8 +261,10 @@ textarea{
 
   .hisory-message #subject{
     width: 200px;
+    margin-left: 15px;
   }
 
   .hisory-message #message{
     width: 300px;
+    margin-left: 15px
   }

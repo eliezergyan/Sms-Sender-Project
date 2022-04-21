@@ -104,11 +104,16 @@ const SignIn = () =>{
             
             <input type="submit" value="Login" />
             <br/>
-            <input type="checkbox" />                
-            <label id="remember">Remember Me.</label>
-            <label id="forgotten"><a onClick = {() => {
-                navigate("/reset-password")
-            }} >Forgotten Password</a></label>
+            <div className="form-details">
+                <div className="check-box">
+                    <input type="checkbox" />                
+                    <label id="remember">Remember Me.</label>   
+                </div>            
+                <label id="forgotten"><a onClick = {() => {
+                    navigate("/reset-password")
+                }} >Forgotten Password</a></label>
+            </div>
+            
             <br/>
             <br/>
             <br/>
