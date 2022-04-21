@@ -8,7 +8,7 @@ const ComposeForm = () =>{
 
     const [messageSubject, setMessageSubject] = useState("");
     const [messageBody, setMessageBody] = useState("");
-    const [contacts, setContacts] = useState("");
+    const [contacts, setContacts] = useState([]);
 
     const handleMessageSubject = (e) => {
         setMessageSubject(e.target.value);
@@ -21,12 +21,28 @@ const ComposeForm = () =>{
     const handleMessageReceiver = (e) => {
         setContacts(e.target.value)
     }
+    
+    const handleTemplate = async (e) => {
+        e.preventDefault();
+        try {
+            const body =  { messageSubject, messageBody, contacts };
+            const response = await fetch("http://localhost:5000/templates", {
+                method: "POST",
+                headers: {"content-type": "application/json"},
+                body: JSON.stringify(body)
+            });
+        } catch (err) {
+            console.error(err.message);
+        }
+        setContacts("");
+        setMessageSubject("");
+        setMessageBody("");
+    }
 
     const handleSend = async (e) => {
         e.preventDefault();
         try {
             const splitContacts = contacts.split(";");
-            console.log(splitContacts); 
             const body = {messageBody, splitContacts};
             const response = await fetch("http://localhost:5000/messages/send_message", {
                 method: "POST",
@@ -34,7 +50,8 @@ const ComposeForm = () =>{
                 body: JSON.stringify(body)
             });
 
-
+            console.log(response)
+            
             splitContacts.forEach(async (messageReceiver) => {
                 const body =  { messageSubject, messageBody, messageReceiver };
                 const response = await fetch("http://localhost:5000/messages", {
@@ -64,9 +81,9 @@ const ComposeForm = () =>{
                         <input type="text" onChange={handleMessageSubject} value={messageSubject} placeholder="Subject" id="compose-subject"/>
                         <br />
                         <textarea type="text" onChange={handleMessageBody} value={messageBody} placeholder="Message..." className="message-mobile" id="message " required></textarea>
-                        <button>Save Templates</button>
+                        <button onClick={handleTemplate}>Save Templates</button>
                         <button onClick={handleSend}>Send Now</button>
-                        <button>Send Later</button>
+                        <button >Send Later</button>
                     </form>   
                 </div>                            
             </div>

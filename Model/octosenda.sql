@@ -22,5 +22,6 @@ CREATE TABLE message(
 CREATE TABLE templates(
   template_id SERIAL PRIMARY KEY,
   template_subject VARCHAR(255),
-  template_body VARCHAR(255)
+  template_body VARCHAR(255),
+  template_contacts VARCHAR(255)
 );

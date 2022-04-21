@@ -34,14 +34,12 @@ messageRoute.post('/', async (req, res) => {
 
 });
 
-messageRoute.post('/send_message', async (req, res, next) => {
+messageRoute.post('/send_message', async (req, res) => {
         const { messageBody, splitContacts} = req.body;
-
         const options = {
             to: splitContacts,
             message: messageBody
         }
-
         sms.send(options).then(info => {
             res.json(info)
         }).catch(err => {

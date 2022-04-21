@@ -1,14 +1,33 @@
 import '../compose/compose.css';
+import { useState, useEffect } from 'react';
 
 const SavedTemplates = () =>{
+    const [templates, setTemplates] = useState([]);
+
+    const getTemplates = async () => {
+        try {
+            const response = await fetch("http://localhost:5000/templates");
+            const jsonData = await response.json();
+            
+            setTemplates(jsonData);
+
+        } catch (err) {
+            console.error(err)
+        }
+    }
+ 
+    useEffect(()=>{getTemplates()},[])
+
     return(
         <div className="container-history">
-            <div className="hisory-message-section">
+        {
+            templates.map(template => (
+                <div className="hisory-message-section" key={template.template_id}>
                 <div className="hisory-message">
                     <div>
-                        <h3>1506</h3>
-                        <p id="subject">Is your balance low?</p>
-                        <p id="message">No worries you are eligible for SOS</p>
+                        <h3>{template.template_contacts}</h3>
+                        <p id="subject">{template.template_subject}</p>
+                        <p id="message">{template.template_body}</p>
                     </div>                    
                 </div>
                 <div className="btn">
@@ -16,34 +35,9 @@ const SavedTemplates = () =>{
                     <button>Send Now</button>
                 </div>                
             </div>
+            ))
 
-            <div className="hisory-message-section">
-                <div className="hisory-message">
-                    <div>
-                        <h3>1506</h3>
-                        <p id="subject">Is your balance low?</p>
-                        <p id="message">No worries you are eligible for SOS</p>
-                    </div>                    
-                </div>
-                <div className="btn">
-                    <button>Edit</button>
-                    <button>Send Now</button>
-                </div>                
-            </div>
-
-            <div className="hisory-message-section">
-                <div className="hisory-message">
-                    <div>
-                        <h3>1506</h3>
-                        <p id="subject">Is your balance low?</p>
-                        <p id="message">No worries you are eligible for SOS</p>
-                    </div>                    
-                </div>
-                <div className="btn">
-                    <button>Edit</button>
-                    <button>Send Now</button>
-                </div>                
-            </div>            
+        }           
         </div>
     )
 }
