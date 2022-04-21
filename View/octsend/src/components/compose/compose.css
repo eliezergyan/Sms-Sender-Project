@@ -40,7 +40,7 @@
     margin-top: 50px;
 }
 .left-section-compose h2{
-    color: #F9A826;
+    color: #009D96;
     font-family: 'Inter', sans-serif;
     font-style: italic;
     font-weight: 300;
@@ -56,7 +56,7 @@
 
 }
 
-.left-section-compose h2:nth-child(2),.left-section-compose h2:last-child {
+.left-section-compose h2:nth-child(2),.left-section-compose h2:nth-child(3),.left-section-compose h2:last-child {
     color: #009D96;
     font-weight: 300;
     /* border: 1px solid red; */
@@ -69,7 +69,7 @@
 .main-section{
     grid-area: main-section;
     border: 1px solid #009D96;
-    width: 200px;
+    
     
 }
 
@@ -80,6 +80,9 @@
     font-size: 30px;
     font-style: italic;
     border: 1px solid #009D96;
+    width: 250px;
+    height: 35px;
+
 }
 
 .main-message-section{
@@ -111,6 +114,7 @@
     width: 327px;
     margin-bottom: 27px;
     border: none;
+    /* border: 1px solid #009D96; */
 }
 
 .form-section{
@@ -118,12 +122,30 @@
 }
 .form-section form{
     margin-left: 0px;
-    border: 1px solid #009D96;
-    width: 320px;
+    /* border: 1px solid #009D96; */
+    width: 470px;
     margin: 0;
     height: 330px;
 }
 
+.form-section button{
+    width: 120px;
+    height: 30px;
+    background-color: #009D96;
+    margin-left: 15px;
+    margin-top: 15px;
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+    border-radius: 5px;
+    border: 0;
+    
+}
+
+.form-section button:hover{
+    background-color: #009d95bb;
+    cursor: pointer;
+}
 
 
 #compose-subject{
@@ -134,6 +156,7 @@
     width: 327px;
     height: 28px;
     padding: 15px;
+    /* border: 1px solid #009D96; */
     
 }
 
@@ -186,3 +209,59 @@ textarea{
     font-size: 15px;
   }
   
+  .container-history{
+    width: 860px;
+    height: 410px;
+    background-color: #fff;
+    margin: 20px;
+    border: 1px solid #fff;
+  }
+  .hisory-message-section{
+      display: flex;
+      width: 800px;
+      justify-content: space-between;
+  }
+
+  .hisory-message-section .btn{
+    display: flex;
+    justify-content: space-between;
+    width: 185px;
+    margin-top: 67px;
+    
+  }
+
+  .btn button{
+      width: 100px;
+      height: 30px;
+      margin-left: 15px;
+      background-color: #009D96;
+      color: #fff;
+      border: 0;
+      cursor: pointer;
+  }
+
+  .btn button:hover{
+      background-color: #009d95bb;
+  }
+  .hisory-message{
+      /* border: 1px solid red; */
+      width: 600px;
+      height: 70px;
+      margin-top: 27px;
+      margin-left: 15px;
+      background-color: #e4e4e4;
+      
+  }
+
+  .hisory-message h3{
+      width: 50px;
+      margin-left: 20px;
+  }
+
+  .hisory-message #subject{
+    width: 200px;
+  }
+
+  .hisory-message #message{
+    width: 300px;
+  }

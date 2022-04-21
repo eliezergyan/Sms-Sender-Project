@@ -109,6 +109,9 @@
      width: 15px;
      height: 15px;
      margin-left: 15px;
+     accent-color: #F9A826;  
+     cursor: pointer;
+        
  }
 
  .signin-form label{
