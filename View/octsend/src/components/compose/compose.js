@@ -36,9 +36,9 @@ const Compose = () =>{
             </div>
             <div className="left-section-compose">
                 <div className="header-2">
-                    <h2  onClick={()=>changeHOne(hone.first, <ComposeForm />)}>Compose</h2>
-                    <h2  onClick={()=>changeHOne(hone.second, <History />)}>History</h2>
-                    <h2  onClick={()=>changeHOne(hone.third, <SavedTemplates />)}>Saved Templates</h2>
+                    <h2 onClick={()=>changeHOne(hone.first, <ComposeForm />)}>Compose</h2>
+                    <h2 onClick={()=>changeHOne(hone.second, <History />)}>History</h2>
+                    <h2 onClick={()=>changeHOne(hone.third, <SavedTemplates />)}>Saved Templates</h2>
                     <h2 onClick={()=> {navigate("/signin")}}>Log Out</h2> 
                 </div>            
             </div>
