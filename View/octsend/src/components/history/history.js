@@ -1,6 +1,5 @@
 import '../compose/compose.css';
 import { useState, useEffect } from 'react';
-import EditMessage from './editMessage';
 
 const History = () =>{
 

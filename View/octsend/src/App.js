@@ -8,7 +8,6 @@ import SignUp from './components/signup/signup';
 import ResetPassword from './components/reset password/reset-password';
 import Home from './components/home';
 import Compose from './components/compose/compose';
-import EditMessage from './components/history/editMessage';
 // import History from './components/history/history';
 
 // const styl = styles;
