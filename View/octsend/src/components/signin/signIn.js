@@ -27,7 +27,7 @@ const SignIn = () =>{
                 body: JSON.stringify(body)
             });
             if(response.status === 200){
-                navigate("/compose");
+                navigate("/main_page");
             }
             
         } catch (err) {
