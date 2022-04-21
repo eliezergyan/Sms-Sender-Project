@@ -22,9 +22,7 @@ app.use('/messages', messageRoute);
 
 app.use('/templates', templateRoute);
 
-app.get('/', (req, res) => {
-    res.json({"message": "welcome"});
-})
+
 
 app.listen(PORT, () => {
     console.log(`Server running on port: ${PORT}`);
