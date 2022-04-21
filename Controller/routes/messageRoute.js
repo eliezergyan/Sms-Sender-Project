@@ -14,7 +14,7 @@ const sms = AT.SMS;
 
 messageRoute.get('/', async (req, res) => {
     try {
-        const allMessages = await pool.query("SELECT message_id, message_subject, message_body, receiver_contact FROM message");
+        const allMessages = await pool.query("SELECT message_id, message_subject, message_body, receiver_contact FROM message ORDER BY message_id DESC");
         res.json(allMessages.rows);       
     } catch (err) {
         console.error(err.message);
