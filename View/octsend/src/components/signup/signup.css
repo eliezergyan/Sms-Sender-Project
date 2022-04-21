@@ -66,7 +66,7 @@
     background-color: #fff;
     border: none;
     margin-bottom: 27px;
-    margin-left: 15px;
+    margin-left: 70px;
     padding-left: 20px;
     box-shadow: 1px 5px 5px #3f3f3f;
 }
@@ -78,7 +78,7 @@
 .signup-form input[type="email"]{
     background-color: #fff;
     margin-bottom: 27px;
-    margin-left: 15px;
+    margin-left: 70px;
     border: none;
     box-shadow: 1px 5px 5px #3f3f3f;
     padding-left: 20px;
@@ -87,7 +87,7 @@
 .signup-form input[type="password"]{
     background-color: #fff;
     margin-bottom: 27px;
-    margin-left: 15px;
+    margin-left: 70px;
     border: none;
     box-shadow: 1px 5px 5px #3f3f3f;
     padding-left: 20px;
@@ -96,7 +96,7 @@
 .signup-form input[type="submit"]{
     background-color: #F9A826;
     border: none;
-    margin-left: 15px;
+    margin-left: 70px;
     margin-bottom: 27px;
     color: #009D96;
     font-family: 'Inter', sans-serif;
@@ -121,14 +121,10 @@
    font-family: 'Inter', sans-serif;
    color: #fff;
    font-size: 12px;
+   margin-left: 137px;
 }
 
 
-
-#a-member{
-    margin-left: 25px;
-    /* margin-top: 59px; */
-}
 
 #sign-in-color{
     color: #F9A826;
