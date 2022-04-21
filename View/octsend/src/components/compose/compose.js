@@ -1,16 +1,28 @@
 import './compose.css';
 import Oct from '../../assets/octLogo.png';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import ComposeForm from './compose2';
+import History from '../history/history';
+import SavedTemplates from '../SavedTemplates/savedTemplates';
+import { useNavigate } from 'react-router-dom';
 
 
 
 const Compose = () =>{
     const API_KEY="8b0225c779bfa167afdabffc7ed58cc7824086720d2770ab735b84ff5a2c41f9";
     const USER_NAME = "octosenda";
+    let oct= Oct;
+    let navigate = useNavigate();
 
     const [messageSubject, setMessageSubject] = useState("");
     const [messageBody, setMessageBody] = useState("");
     const [contacts, setContacts] = useState("");
+
+  
+    const changeHOne = (hOne, form, color) =>{
+        setHOne(hOne);
+        setForms(form);        
+    }
 
     const handleMessageSubject = (e) => {
         setMessageSubject(e.target.value);
@@ -55,9 +67,6 @@ const Compose = () =>{
         }
     }
 
-
-    let oct= Oct;
-
     return (
         <div className="grids-container">
             <div className="logo">
@@ -65,12 +74,14 @@ const Compose = () =>{
             </div>
             <div className="left-section-compose">
                 <div className="header-2">
-                    <h2>Compose</h2>
-                    <h2>History</h2>
-                    <h2>Saved Templates</h2> 
+                    <h2  onClick={()=>changeHOne(hone.first, <ComposeForm />)}>Compose</h2>
+                    <h2  onClick={()=>changeHOne(hone.second, <History />)}>History</h2>
+                    <h2  onClick={()=>changeHOne(hone.third, <SavedTemplates />)}>Saved Templates</h2>
+                    <h2 onClick={()=> {navigate("/signin")}}>Log Out</h2> 
                 </div>            
             </div>
             <div className="main-section">            
+
                     <h1>Compose</h1>
                     <div className="main-message-section">
                         <div className="main-message">                                                           
@@ -87,6 +98,11 @@ const Compose = () =>{
                                 </form>   
                             </div>                            
                         </div>            
+
+                <h1>{hOne}</h1>
+                <div className="main-message-section">
+                       {form}             
+
                 </div>    
             </div>
         </div>  
