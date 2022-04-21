@@ -8,27 +8,26 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-const Compose = () =>{  
-     let hone = {
+const Compose = () =>{
+    let oct= Oct;
+    let navigate = useNavigate();
+    let hone = {
         first: "Compose",
         second: "History",
         third: "Saved Templates"
         
     }
 
-    const [hOne, setHOne] = useState(hone.first);
+    const [hOne, setHOne] = useState(hone.one);
     const [form, setForms] = useState(<ComposeForm />);
-    const [color, setColor] = useState("#009D96")    
+    const [color, setColor] = useState("#009D96") 
 
-    let oct= Oct;
-    
+  
     const changeHOne = (hOne, form, color) =>{
         setHOne(hOne);
         setForms(form);        
     }
 
-    
-    let navigate = useNavigate();
 
     return (
         <div className="grids-container">
@@ -37,19 +36,19 @@ const Compose = () =>{
             </div>
             <div className="left-section-compose">
                 <div className="header-2">
-                    <h2  onClick={()=>changeHOne(hone.first, <ComposeForm />)}>Compose</h2>
-                    <h2  onClick={()=>changeHOne(hone.second, <History />)}>History</h2>
-                    <h2  onClick={()=>changeHOne(hone.third, <SavedTemplates />)}>Saved Templates</h2>
+                    <h2 onClick={()=>changeHOne(hone.first, <ComposeForm />)}>Compose</h2>
+                    <h2 onClick={()=>changeHOne(hone.second, <History />)}>History</h2>
+                    <h2 onClick={()=>changeHOne(hone.third, <SavedTemplates />)}>Saved Templates</h2>
                     <h2 onClick={()=> {navigate("/signin")}}>Log Out</h2> 
                 </div>            
             </div>
             <div className="main-section">            
                 <h1>{hOne}</h1>
-                <div className="main-message-section">
-                       {form}             
-                </div>    
+                    <div className="main-message-section">
+                        {form}             
+                    </div>
             </div>
-        </div>  
+        </div>    
     )
 }
 

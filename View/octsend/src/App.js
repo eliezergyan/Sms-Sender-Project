@@ -21,7 +21,7 @@ function App() {
                 <Route path="/signup" element={<SignUp />} />                
                 <Route path="/signin" element={<SignIn />} />
                 <Route path="/reset-password" element = {<ResetPassword />} />
-                <Route path="/compose" element = {<Compose />} />
+                <Route path="/main_page" element = {<Compose />} />
                 {/* <Route path="/history" element = {<History />} />                           */}
             </Routes>
         </Router>      
