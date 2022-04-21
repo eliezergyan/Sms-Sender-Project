@@ -5,7 +5,8 @@ import { useState } from 'react';
 
 
 const Compose = () =>{
-
+    const API_KEY="8b0225c779bfa167afdabffc7ed58cc7824086720d2770ab735b84ff5a2c41f9";
+    const USER_NAME = "octosenda";
 
     const [messageSubject, setMessageSubject] = useState("");
     const [messageBody, setMessageBody] = useState("");
@@ -27,22 +28,14 @@ const Compose = () =>{
         e.preventDefault();
         try {
             const splitContacts = contacts.split(";");
-
-
-            console.log(splitContacts);
-            const body =  { messageSubject, messageBody, splitContacts };
-            const africastalkingResponse = await fetch("https://api.africastalking.com/version1/messaging", {
+            console.log(splitContacts); 
+            const body = {messageBody, splitContacts};
+            const response = await fetch("http://localhost:5000/messages/send_message", {
                 method: "POST",
-                mode: 'no-cors',
-                to: splitContacts,
-                message: messageBody,
-                from: "OctoSenda", 
-                username: "octosenda",
-                headers: {"username": USER_NAME,"apiKey": API_KEY,"content-type": "application/json", "accept":"string"},
-                bultSMSMode: 1
-            })
+                headers: {"content-type": "application/json"},
+                body: JSON.stringify(body)
+            });
 
-            console.log(africastalkingResponse);  
 
             splitContacts.forEach(async (messageReceiver) => {
                 const body =  { messageSubject, messageBody, messageReceiver };
@@ -51,8 +44,6 @@ const Compose = () =>{
                     headers: {"content-type": "application/json"},
                     body: JSON.stringify(body)
                 });
-                console.log(response);
-                console.log(messageReceiver, messageSubject, messageBody)
             })
 
             setContacts("");
