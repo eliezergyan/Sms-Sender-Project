@@ -58,6 +58,8 @@ const History = () =>{
                     <button>Send Now</button>
                 </div>                
             </div>
+
+            
         </div>
     )
 }
