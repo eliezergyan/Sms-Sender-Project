@@ -1,7 +1,6 @@
 import './signin.css';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-require("dotenv").config();
 
 const PORT = process.env.PORT
 
@@ -24,7 +23,7 @@ const SignIn = () =>{
 
         try {
             const body = { username, password};
-            const response = await fetch(`http://localhost:${PORT}/login`, {
+            const response = await fetch(`http://localhost:5000/login`, {
                 method: "POST",
                 headers: {"content-type": "application/json"},
                 body: JSON.stringify(body)

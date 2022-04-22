@@ -1,5 +1,5 @@
 const express = require("express");
-const pool = require('../../Model/db_connect');
+const { pool } = require('../../Model/db_connect');
 
 const signupRoute = express.Router();
 
