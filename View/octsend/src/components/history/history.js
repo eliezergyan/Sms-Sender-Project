@@ -8,7 +8,7 @@ const History = () =>{
 
     const getHistory = async () => {
         try {
-            const response = await fetch("http://localhost:5000/messages");
+            const response = await fetch("https://octosenda.herokuapp.com/messages");
             const jsonData = await response.json();
             
             setHistory(jsonData);
