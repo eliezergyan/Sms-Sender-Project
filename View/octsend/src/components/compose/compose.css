@@ -215,6 +215,7 @@ textarea{
     background-color: #fff;
     margin: 20px;
     border: 1px solid #fff;
+    overflow-y: scroll;
   }
   .hisory-message-section{
       display: flex;
@@ -260,8 +261,10 @@ textarea{
 
   .hisory-message #subject{
     width: 200px;
+    margin-left: 15px;
   }
 
   .hisory-message #message{
     width: 300px;
+    margin-left: 15px
   }
