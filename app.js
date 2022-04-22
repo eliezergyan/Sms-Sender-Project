@@ -35,8 +35,6 @@ app.use('/messages', messageRoute);
 app.use('/templates', templateRoute);
 
 
-
-
 app.listen(PORT, () => {
     console.log(`Server running on port: ${PORT}`);
 });
