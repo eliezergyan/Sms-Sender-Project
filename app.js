@@ -9,6 +9,8 @@ const templateRoute = require("./Controller/routes/templateRoute");
 const path = require('path');
 
 
+app.use(express.static(path.join(__dirname, 'View/octsend/build')));
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
