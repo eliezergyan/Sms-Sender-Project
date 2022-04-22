@@ -17,5 +17,3 @@ _book
 
 # Environmental Variable
 .env
-
-db_connect.js
