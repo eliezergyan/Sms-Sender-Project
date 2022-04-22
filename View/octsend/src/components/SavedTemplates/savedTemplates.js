@@ -6,7 +6,7 @@ const SavedTemplates = () =>{
 
     const getTemplates = async () => {
         try {
-            const response = await fetch("http://localhost:5000/templates");
+            const response = await fetch("https://octosenda.herokuapp.com/templates");
             const jsonData = await response.json();
             
             setTemplates(jsonData);

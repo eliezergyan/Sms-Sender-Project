@@ -34,7 +34,7 @@ const ComposeForm = () =>{
         e.preventDefault();
         try {
             const body =  { messageSubject, messageBody, contacts };
-            const response = await fetch("http://localhost:5000/templates", {
+            const response = await fetch("https://octosenda.herokuapp.com/templates", {
                 method: "POST",
                 headers: {"content-type": "application/json"},
                 body: JSON.stringify(body)
@@ -52,7 +52,7 @@ const ComposeForm = () =>{
         try {
             const splitContacts = contacts.split(";");
             const body = {messageBody, splitContacts};
-            const response = await fetch("http://localhost:5000/messages/send_message", {
+            const response = await fetch("https://octosenda.herokuapp.com/messages/send_message", {
                 method: "POST",
                 headers: {"content-type": "application/json"},
                 body: JSON.stringify(body)
@@ -60,7 +60,7 @@ const ComposeForm = () =>{
             
             splitContacts.forEach(async (messageReceiver) => {
                 const body =  { messageSubject, messageBody, messageReceiver };
-                const response = await fetch("http://localhost:5000/messages", {
+                const response = await fetch("https://octosenda.herokuapp.com/messages", {
                     method: "POST",
                     headers: {"content-type": "application/json"},
                     body: JSON.stringify(body)

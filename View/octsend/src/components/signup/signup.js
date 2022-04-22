@@ -42,7 +42,7 @@ const Signup = () =>{
 
         try {
             const body = { firstName, lastName, username, password, email, confirmpassword};
-            const response = await fetch("http://localhost:5000/signup", {
+            const response = await fetch("https://octosenda.herokuapp.com/signup", {
                 method: "POST",
                 headers: {"content-type": "application/json"},
                 body: JSON.stringify(body)
