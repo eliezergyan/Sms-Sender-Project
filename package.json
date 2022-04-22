@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "build:ui": "rm -rf build && cd ./View/octsend && npm run build --prod && cp -r build ../"
   },
   "keywords": [],
   "author": "",
