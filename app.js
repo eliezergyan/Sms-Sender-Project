@@ -10,7 +10,9 @@ const templateRoute = require("./Controller/routes/templateRoute");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.get('/', loginRouter)
+app.get("/", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "View", "octsend", "public","index.html"));
+  });
 
 app.use(cors());
 app.use(express.json());
