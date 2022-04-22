@@ -11,9 +11,10 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.get("/", (req, res) => {
+
+app.get("*", function (req, res) {
     res.sendFile(path.join(__dirname, "./View/octsend/public/index.html"));
-  });
+});
 
 
 app.use(cors());
