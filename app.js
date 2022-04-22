@@ -5,13 +5,14 @@ const loginRouter = require("./Controller/routes/loginRoute");
 const signupRoute = require("./Controller/routes/signupRoute");
 const messageRoute = require("./Controller/routes/messageRoute");
 const templateRoute = require("./Controller/routes/templateRoute");
+const path = require("react-path");
 
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.get("/", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "View", "octsend", "public","index.html"));
+    res.sendFile(path.resolve(__dirname, "View", "octsend", "public", "index.html"));
   });
 
 app.use(cors());
