@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'View/octsend/build')));
 
 if (process.env.NODE_ENV === "production") {
-    app.use(express.static("client/build"));
+    app.use(express.static("View/octsend/build"));
   }
 
 app.get("*", function (req, res) {
@@ -36,7 +36,7 @@ app.use('/templates', templateRoute);
 
 app.get('/gifts', (req, res) => {
     res.json({"message": "Gifts delivered"})
-})
+});
 
 app.listen(PORT, () => {
     console.log(`Server running on port: ${PORT}`);
