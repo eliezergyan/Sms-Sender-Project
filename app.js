@@ -11,15 +11,14 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-
-app.get("*", function (req, res) {
-    res.sendFile(path.join(__dirname, "./View/octsend/public/index.html"));
-});
-
-
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+  }
+
 
 app.use('/login', loginRouter);
 
@@ -29,7 +28,9 @@ app.use('/messages', messageRoute);
 
 app.use('/templates', templateRoute);
 
-
+app.get("*", function (req, res) {
+    res.sendFile(path.join(__dirname, "./View/octsend/public/index.html"));
+});
 
 app.listen(PORT, () => {
     console.log(`Server running on port: ${PORT}`);
