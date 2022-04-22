@@ -14,17 +14,8 @@ const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(express.static(path.join(__dirname, 'View/octsend/build')));
-
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static("View/octsend/build"));
-  }
-
-app.get("*", function (req, res) {
-    res.sendFile(path.join(__dirname, "./View/octsend/build/index.html"));
-});
 
 app.use('/login', loginRouter);
 
