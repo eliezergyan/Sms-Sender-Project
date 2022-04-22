@@ -1,5 +1,6 @@
 const express =  require("express");
 const cors = require("cors");
+require("dotenv").config();
 const bodyParser = require("body-parser");
 const loginRouter = require("./Controller/routes/loginRoute");
 const signupRoute = require("./Controller/routes/signupRoute");
@@ -19,7 +20,6 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
   }
 
-
 app.use('/login', loginRouter);
 
 app.use('/signup', signupRoute);
@@ -29,7 +29,7 @@ app.use('/messages', messageRoute);
 app.use('/templates', templateRoute);
 
 app.get("*", function (req, res) {
-    res.sendFile(path.join(__dirname, "./View/octsend/public/index.html"));
+    res.sendFile(path.join(__dirname, "./View/octsend/build/index.html"));
 });
 
 app.listen(PORT, () => {
