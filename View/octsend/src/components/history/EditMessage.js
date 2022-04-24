@@ -37,7 +37,6 @@ const EditMessage = ({ message }) => {
                 });
             })
 
-            window.location.reload(true);
 
         } catch (err) {
             console.error(err.message)
