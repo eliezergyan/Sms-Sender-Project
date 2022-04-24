@@ -25,10 +25,10 @@ const History = () =>{
         <>
             <div className="container-history">
             {history.map(message => (
-                <div className="hisory-message-section" key={data.message_id}>
+                <div className="hisory-message-section" key={message.message_id}>
                 <div className="hisory-message">
                     <div>
-                        <h3>{data.receiver_contact}</h3>
+                        <h3>{message.receiver_contact}</h3>
                         <p id="subject">{message.message_subject}</p>
                         <p id="message">{message.message_body}</p>
                     </div>                    
