@@ -1,5 +1,6 @@
 import '../compose/compose.css';
 import { useState, useEffect } from 'react';
+import EditMessage from './EditMessage';
 
 const History = () =>{
 
@@ -33,7 +34,7 @@ const History = () =>{
                     </div>                    
                 </div>
                 <div className="btn">
-                    <button>Edit</button>
+                    <EditMessage message={message}/>
                     <button>Resend</button>
                 </div>                
             </div>

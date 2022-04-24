@@ -32,9 +32,6 @@ app.use('/messages', messageRoute);
 
 app.use('/templates', templateRoute);
 
-app.get('/gifts', (req, res) => {
-    res.json({"message": "Gifts delivered"})
-});
 
 app.listen(PORT, () => {
     console.log(`Server running on port: ${PORT}`);

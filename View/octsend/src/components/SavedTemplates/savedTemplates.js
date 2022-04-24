@@ -1,5 +1,6 @@
 import '../compose/compose.css';
 import { useState, useEffect } from 'react';
+import EditTemplate from './EditTemplate';
 
 const SavedTemplates = () =>{
     const [templates, setTemplates] = useState([]);
@@ -31,7 +32,7 @@ const SavedTemplates = () =>{
                     </div>                    
                 </div>
                 <div className="btn">
-                    <button>Edit</button>
+                    <EditTemplate template={template}/>
                     <button>Send Now</button>
                 </div>                
             </div>

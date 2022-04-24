@@ -38,7 +38,8 @@ messageRoute.post('/send_message', async (req, res) => {
         const { messageBody, splitContacts} = req.body;
         const options = {
             to: splitContacts,
-            message: messageBody
+            message: messageBody,
+            from: "OctoSenda"
         }
         sms.send(options).then(info => {
             res.json(info)
