@@ -24,13 +24,13 @@ const History = () =>{
     return(
         <>
             <div className="container-history">
-            {history.map(data => (
+            {history.map(message => (
                 <div className="hisory-message-section" key={data.message_id}>
                 <div className="hisory-message">
                     <div>
                         <h3>{data.receiver_contact}</h3>
-                        <p id="subject">{data.message_subject}</p>
-                        <p id="message">{data.message_body}</p>
+                        <p id="subject">{message.message_subject}</p>
+                        <p id="message">{message.message_body}</p>
                     </div>                    
                 </div>
                 <div className="btn">
