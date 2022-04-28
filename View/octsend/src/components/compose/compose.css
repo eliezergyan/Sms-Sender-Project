@@ -247,7 +247,6 @@ textarea{
   .hisory-message{
       /* border: 1px solid red; */
       width: 600px;
-      height: 70px;
       margin-top: 27px;
       margin-left: 15px;
       background-color: #e4e4e4;
@@ -255,16 +254,21 @@ textarea{
   }
 
   .hisory-message h3{
-      width: 50px;
-      margin-left: 20px;
-  }
+    width: 500px;
+    margin-left: 15px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+    font-size: 16px;
+}
 
   .hisory-message #subject{
     width: 200px;
     margin-left: 15px;
+    margin-bottom: 0px;
   }
 
   .hisory-message #message{
     width: 300px;
-    margin-left: 15px
+    margin-left: 15px;
+    margin-bottom: 0px;
   }

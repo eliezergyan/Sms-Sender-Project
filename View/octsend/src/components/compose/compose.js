@@ -18,7 +18,7 @@ const Compose = () =>{
         
     }
 
-    const [hOne, setHOne] = useState(hone.one);
+    const [hOne, setHOne] = useState(hone.first);
     const [form, setForms] = useState(<ComposeForm />);
     const [color, setColor] = useState("#009D96") 
 
