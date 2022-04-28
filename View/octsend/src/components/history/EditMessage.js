@@ -17,6 +17,12 @@ const EditMessage = ({ message }) => {
         setContacts(e.target.value)
     }
 
+    const handleClear = (e) => {
+        setMessageSubject("");
+        setMessageBody("");
+        setContacts("");
+    }
+
     const handleSend = async (e) => {
         e.preventDefault();
         try {
@@ -56,7 +62,9 @@ const EditMessage = ({ message }) => {
 
             <div className="modal-header">
                 <h4 className="modal-title">Edit Message</h4>
-                <button type="button" className="close" data-dismiss="modal">&times;</button>
+                <button type="button" className="close" data-dismiss="modal" onClick={handleClear}>
+                    &times;
+                </button>
             </div>
 
             <div className="modal-body">
