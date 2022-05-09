@@ -39,7 +39,7 @@ messageRoute.post('/send_message', async (req, res) => {
         const options = {
             to: splitContacts,
             message: messageBody,
-            from: "OctoSenda"
+            from: "Amalitech"
         }
         sms.send(options).then(info => {
             res.json(info)
