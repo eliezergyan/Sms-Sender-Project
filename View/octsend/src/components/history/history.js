@@ -14,7 +14,7 @@ const Resend = ({message}) => {
         try {
             const splitContacts = contacts.split(";");
             const body = {messageBody, splitContacts};
-            const response = await fetch("http://localhost:5000/messages/send_message", {
+            const response = await fetch("https://octosenda.herokuapp.com/messages/send_message", {
                 method: "POST",
                 headers: {"content-type": "application/json"},
                 body: JSON.stringify(body)
@@ -22,7 +22,7 @@ const Resend = ({message}) => {
             
             splitContacts.forEach(async (messageReceiver) => {
                 const body =  { messageSubject, messageBody, messageReceiver };
-                const response = await fetch("http://localhost:5000/messages", {
+                const response = await fetch("https://octosenda.herokuapp.com/messages", {
                     method: "POST",
                     headers: {"content-type": "application/json"},
                     body: JSON.stringify(body)
@@ -51,7 +51,7 @@ const History = () => {
 
     const getHistory = async () => {
         try {
-            const response = await fetch("http://localhost:5000/messages");
+            const response = await fetch("https://octosenda.herokuapp.com/messages");
             const jsonData = await response.json();
             setSpinner("none")
             
