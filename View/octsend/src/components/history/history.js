@@ -74,7 +74,7 @@ const History = () =>{
                 </div>
                 <div className="btn">
                     <EditMessage message={message}/>
-                    <button>Resend</button>
+                    <Resend message={message} />
                 </div>                
             </div>
 
