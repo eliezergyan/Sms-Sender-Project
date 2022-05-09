@@ -2,6 +2,7 @@ import '../compose/compose.css';
 import { useState, useEffect } from 'react';
 import EditMessage from './EditMessage';
 
+
 const Resend = ({message}) => {
     const [messageSubject, setMessageSubject] = useState(message.message_subject);
     const [messageBody, setMessageBody] = useState(message.message_body);
@@ -35,21 +36,24 @@ const Resend = ({message}) => {
     }
 
 
+
     return(
         <button data-target={`#id${message.message_id}`} onClick={handleSend}>Resend</button>
     )
 }
 
 
-const History = () =>{
+const History = () => {
 
     const [history, setHistory] = useState([]);
-
+    const [spinner, setSpinner] = useState("display");
+ 
 
     const getHistory = async () => {
         try {
-            const response = await fetch("https://octosenda.herokuapp.com/messages");
+            const response = await fetch("http://localhost:5000/messages");
             const jsonData = await response.json();
+            setSpinner("none")
             
             setHistory(jsonData);
 
@@ -57,11 +61,19 @@ const History = () =>{
             console.error(err)
         }
     }
- 
+
     useEffect(()=>{getHistory()},[])
+
 
     return(
         <>
+            <div className="text-center"  style={{display: `${spinner}`}}>
+                <div className="spinner-border" role="status">
+                    <span className="sr-only">Loading...</span>
+                </div>
+            </div>
+            
+
             <div className="container-history">
             {history.map(message => (
                 <div className="hisory-message-section" key={message.message_id}>
@@ -74,10 +86,9 @@ const History = () =>{
                 </div>
                 <div className="btn">
                     <EditMessage message={message}/>
-                    <Resend message={message}/>
+                    <Resend message={message} />
                 </div>                
-            </div>
-
+                </div>
             ))}
             </div>
         </>
